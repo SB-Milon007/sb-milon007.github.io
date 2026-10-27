@@ -423,7 +423,27 @@
     border-radius: 2px;
     transition: .2s;
   }
-  .skill-tag:hover { border-color: var(--rust); color: var(--rust); }
+  .skill-tag:hover { border-color: var(--rust); color: var(--rust); background: rgba(196,98,45,.06); }
+  a.skill-tag { text-decoration: none; color: var(--ink); border-color: rgba(26,22,18,.22); display: inline-flex; align-items: center; gap: .4rem; }
+  a.skill-tag:hover { color: var(--rust); border-color: var(--rust); transform: translateY(-2px); }
+  .skill-arrow { font-size: .7rem; opacity: .45; transition: opacity .2s, transform .2s; }
+  a.skill-tag:hover .skill-arrow { opacity: 1; transform: translate(2px,-2px); }
+  .skills-hint {
+    font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--rust);
+    margin: 2rem 0 -1rem !important;
+  }
+  .about-text strong { font-weight: 600; color: var(--ink); }
+  .about-text .hl-name { font-weight: 700; }
+  .about-text .hl-title {
+    color: var(--rust);
+    background: linear-gradient(transparent 62%, rgba(212,168,83,.28) 62%);
+  }
+  .stack-group.flash { animation: stackFlash 1.8s ease; }
+  @keyframes stackFlash {
+    0%, 60% { background: #F3DFC9; box-shadow: inset 0 0 0 2px var(--rust); }
+    100% { background: var(--cream); box-shadow: inset 0 0 0 0 transparent; }
+  }
 
   /* PROJECTS */
   #projects {
@@ -1027,19 +1047,20 @@
     </div>
   </div>
   <div class="about-text reveal">
-    <p>I'm <strong>Shahin Biswas Milon</strong>, a Lead Generation &amp; AI Automation Specialist based in Dhaka, Bangladesh. I help sales, recruiting and research teams get accurate data without the manual grind.</p>
-    <p>My work sits where data engineering meets automation: Python and Playwright scrapers that pull clean, structured data from complex websites; enrichment and validation pipelines that make every record outreach-ready; and n8n + LLM agents that answer customers, triage inboxes and run back-office tasks on their own.</p>
-    <p>I care about accuracy as much as speed — every dataset is QC-checked, every figure traceable to its source, and every workflow built to keep running without me. If it's repetitive, I automate it. If it lives on the web, I can extract it.</p>
+    <p>I'm <strong class="hl-name">Shahin Biswas Milon</strong>, a <strong class="hl-title">Lead Generation &amp; AI Automation Specialist</strong> based in Dhaka, Bangladesh. I help sales, recruiting and research teams get accurate data without the manual grind.</p>
+    <p>My work sits where data engineering meets automation: <strong>Python</strong> and <strong>Playwright</strong> scrapers that pull clean, structured data from complex websites; <strong>enrichment and validation pipelines</strong> that make every record outreach-ready; and <strong>n8n</strong> + <strong>LLM agents</strong> that answer customers, triage inboxes and run back-office tasks on their own.</p>
+    <p>I care about accuracy as much as speed — every dataset is <strong>QC-checked</strong>, every figure traceable to its source, and every workflow built to keep running without me. If it's repetitive, I automate it. If it lives on the web, I can extract it.</p>
+    <p class="skills-hint">Click a skill to jump to related work ↓</p>
     <div class="skills-list">
-      <span class="skill-tag">Lead Generation</span>
-      <span class="skill-tag">Web Scraping</span>
-      <span class="skill-tag">n8n</span>
-      <span class="skill-tag">Agentic AI</span>
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">Selenium / Playwright</span>
-      <span class="skill-tag">Data Enrichment</span>
-      <span class="skill-tag">CRM Automation</span>
-      <span class="skill-tag">Prospect Research</span>
+      <a class="skill-tag" href="#projects" data-filter="web" title="See Lead Generation projects">Lead Generation <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#projects" data-filter="design" title="See Web Scraping projects">Web Scraping <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#projects" data-filter="oss" title="See n8n & AI agent projects">n8n <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#projects" data-filter="oss" title="See AI agent projects">Agentic AI <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#stack-1" data-stack="1" title="See Languages & Core in Tech Stack">Python <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#stack-2" data-stack="2" title="See Scraping & Extraction in Tech Stack">Selenium / Playwright <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#stack-5" data-stack="5" title="See Lead Research in Tech Stack">Data Enrichment <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#stack-4" data-stack="4" title="See Data & Delivery in Tech Stack">CRM Automation <span class="skill-arrow">↗</span></a>
+      <a class="skill-tag" href="#projects" data-filter="web" title="See Lead Generation projects">Prospect Research <span class="skill-arrow">↗</span></a>
     </div>
   </div>
 </section>
@@ -1054,27 +1075,27 @@
     <p class="reveal reveal-delay-2">The stack behind every project below — chosen for reliability on messy, real-world data and for automations that keep running unattended.</p>
   </div>
   <div class="stack-grid">
-      <div class="stack-group reveal reveal-delay-1">
+      <div id="stack-1" class="stack-group reveal reveal-delay-1">
         <div class="stack-num">01</div>
         <h3 class="stack-title">Languages &amp; Core</h3>
         <ul><li>Python</li><li>Webhooks</li><li>PowerShell</li></ul>
       </div>
-      <div class="stack-group reveal reveal-delay-2">
+      <div id="stack-2" class="stack-group reveal reveal-delay-2">
         <div class="stack-num">02</div>
         <h3 class="stack-title">Scraping &amp; Extraction</h3>
         <ul><li>Playwright</li><li>Selenium</li><li>Requests / BeautifulSoup</li><li>Dynamic &amp; paginated sites</li><li>Cookie / session auth</li></ul>
       </div>
-      <div class="stack-group reveal reveal-delay-3">
+      <div id="stack-3" class="stack-group reveal reveal-delay-3">
         <div class="stack-num">03</div>
         <h3 class="stack-title">AI &amp; Automation</h3>
         <ul><li>n8n</li><li>OpenAI GPT-4</li><li>Claude AI</li><li>Prompt engineering</li><li>Gmail &amp; Telegram APIs</li></ul>
       </div>
-      <div class="stack-group reveal reveal-delay-3">
+      <div id="stack-4" class="stack-group reveal reveal-delay-3">
         <div class="stack-num">04</div>
         <h3 class="stack-title">Data &amp; Delivery</h3>
         <ul><li>pandas</li><li>Excel / openpyxl</li><li>Google Sheets API</li><li>Email validation (NeverBounce, Hunter.io)</li><li>QC &amp; de-duplication</li></ul>
       </div>
-      <div class="stack-group reveal reveal-delay-3">
+      <div id="stack-5" class="stack-group reveal reveal-delay-3">
         <div class="stack-num">05</div>
         <h3 class="stack-title">Lead Research</h3>
         <ul><li>B2B prospect research</li><li>LinkedIn research</li><li>Contact &amp; email discovery</li><li>Data enrichment</li><li>CRM-ready exports</li></ul>
@@ -1936,6 +1957,23 @@
           c.style.opacity = '0.2'; c.style.transform = 'scale(0.97)'; c.style.pointerEvents = 'none';
         }
       });
+    });
+  });
+
+  // ── ABOUT SKILL TAGS → project filter / Tech Stack group ──────
+  document.querySelectorAll('a.skill-tag').forEach(tag => {
+    tag.addEventListener('click', e => {
+      if (tag.dataset.filter) {
+        const btn = document.querySelector(`.filter-btn[data-filter="${tag.dataset.filter}"]`);
+        if (btn) btn.click();
+      } else if (tag.dataset.stack) {
+        e.preventDefault();
+        const group = document.getElementById('stack-' + tag.dataset.stack);
+        group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        group.classList.remove('flash');
+        void group.offsetWidth;
+        group.classList.add('flash');
+      }
     });
   });
 
