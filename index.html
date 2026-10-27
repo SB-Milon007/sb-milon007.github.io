@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SB-Milon — Portfolio</title>
+<title>Shahin Biswas Milon — Lead Generation & AI Automation Specialist</title>
+<meta name="description" content="Shahin Biswas Milon — Lead Generation & AI Automation Specialist from Dhaka, Bangladesh. B2B lead databases, Python &amp; Playwright web scrapers, and n8n / AI agent workflows.">
+<meta property="og:title" content="Shahin Biswas Milon — Lead Generation & AI Automation">
+<meta property="og:description" content="B2B lead databases, web scrapers and AI agents that turn web data into qualified pipeline.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -100,7 +104,7 @@
 
   .hero-photo-wrap {
     position: relative;
-    width: 500px; height: 380px;
+    width: 420px; height: 500px;
     margin-top: 0;
   }
   .hero-photo {
@@ -165,13 +169,60 @@
   }
   .hero-name {
     font-family: var(--ff-display);
-    font-size: clamp(3.2rem, 6vw, 6rem);
+    font-size: clamp(2.8rem, 5.2vw, 5.2rem);
     line-height: 1.05;
     font-weight: 700;
     letter-spacing: -.02em;
     margin-bottom: 1.5rem;
   }
   .hero-name em { font-style: italic; color: var(--rust); }
+  .hero-role {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: .6rem;
+    font-family: var(--ff-mono);
+    font-size: .74rem;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin: -1.6rem 0 2.4rem;
+  }
+  .hero-meta-dot { color: var(--rust); }
+  .status-dot {
+    display: inline-block; width: 8px; height: 8px;
+    border-radius: 50%; background: #2EA44F;
+    margin-right: .45rem;
+    box-shadow: 0 0 0 3px rgba(46,164,79,.18);
+  }
+
+  /* SKILLS / TECH STACK */
+  #skills { border-top: 1px solid var(--border); }
+  .skills-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 2rem 4rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .skills-head > p { max-width: 440px; color: var(--muted); line-height: 1.8; }
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .stack-group { background: var(--cream); padding: 2rem 1.8rem; transition: background .3s; }
+  .stack-group:hover { background: #EFE8DC; }
+  .stack-num { font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .2em; color: var(--rust); }
+  .stack-title { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 700; margin: .6rem 0 1.2rem; }
+  .stack-group ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+  .stack-group li { font-size: .92rem; color: #4A4038; display: flex; gap: .65rem; align-items: baseline; line-height: 1.45; }
+  .stack-group li::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0; transform: translateY(-2px);
+  }
   .hero-sub {
     font-size: 1.05rem;
     color: var(--muted);
@@ -408,9 +459,12 @@
     gap: 1px;
     background: rgba(245,240,232,.08);
   }
+  @media (min-width: 1280px) {
+    .project-grid { grid-template-columns: repeat(4, 1fr); }
+  }
   .project-card {
     background: var(--ink);
-    padding: 2.5rem;
+    padding: 1.6rem;
     position: relative;
     overflow: hidden;
     cursor: none;
@@ -431,22 +485,35 @@
     font-family: var(--ff-mono);
     font-size: .65rem;
     letter-spacing: .2em;
-    color: var(--muted);
-    margin-bottom: 2.5rem;
+    color: rgba(245,240,232,.6);
+    margin-bottom: 1rem;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .project-card:hover .project-num { color: rgba(245,240,232,.6); }
+  .project-card:hover .project-num { color: rgba(255,255,255,.85); }
   .project-arrow { transition: transform .3s; font-size: 1.1rem; }
   .project-card:hover .project-arrow { transform: translate(4px,-4px); }
 
   .project-thumb {
-    width: 100%; height: 140px;
-    border-radius: 3px;
-    margin-bottom: 1.8rem;
+    width: 100%; height: 150px;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
     overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
   }
+  .project-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s cubic-bezier(.2,.7,.3,1);
+  }
+  .project-thumb::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(26,22,18,0) 55%, rgba(26,22,18,.45) 100%);
+    pointer-events: none;
+  }
+  .project-card:hover .project-thumb img { transform: scale(1.06); }
   .p-bg-1 { background: linear-gradient(135deg, #2D1B69 0%, #11998e 100%); }
   .p-bg-2 { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
   .p-bg-3 { background: linear-gradient(135deg, #4a1942 0%, #c74b50 100%); }
@@ -462,35 +529,42 @@
     color: var(--gold);
     margin-bottom: .7rem;
   }
-  .project-card:hover .project-type { color: rgba(245,240,232,.7); }
+  .project-card:hover .project-type { color: #fff; }
   .project-name {
     font-family: var(--ff-display);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--cream);
-    margin-bottom: .7rem;
+    margin-bottom: .5rem;
     line-height: 1.2;
   }
   .project-desc {
     font-size: .88rem;
-    color: rgba(245,240,232,.5);
+    color: rgba(245,240,232,.82);
     line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  .project-card:hover .project-desc { color: rgba(245,240,232,.8); }
+  .project-card:hover .project-desc { color: #fff; }
   .project-tags {
     display: flex; flex-wrap: wrap; gap: .4rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
   .project-tag {
     font-family: var(--ff-mono);
-    font-size: .6rem;
-    letter-spacing: .08em;
-    padding: .2rem .6rem;
-    border: 1px solid rgba(245,240,232,.12);
-    color: rgba(245,240,232,.4);
-    border-radius: 2px;
+    font-size: .7rem;
+    letter-spacing: .05em;
+    padding: .3rem .7rem;
+    border: 1px solid rgba(245,240,232,.28);
+    background: rgba(245,240,232,.06);
+    color: rgba(245,240,232,.85);
+    border-radius: 3px;
   }
-  .project-card:hover .project-tag { border-color: rgba(245,240,232,.3); color: rgba(245,240,232,.7); }
+  /* keep cards compact — the full tag list is in the details popup */
+  .project-tag:nth-child(n+4) { display: none; }
+  .project-card:hover .project-tag { border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.12); color: #fff; }
 
   /* CONTACT */
   #contact {
@@ -595,6 +669,26 @@
     align-self: flex-start;
   }
   .form-submit:hover { background: var(--rust); }
+  .form-error {
+    display: none;
+    font-size: .85rem;
+    color: #B3261E;
+    padding: .9rem 1rem;
+    border: 1px solid #B3261E;
+    border-radius: 2px;
+  }
+  .copy-toast {
+    position: fixed; left: 50%; bottom: 2rem;
+    transform: translate(-50%, 20px);
+    background: var(--ink); color: var(--cream);
+    font-family: var(--ff-mono); font-size: .75rem; letter-spacing: .06em;
+    padding: .8rem 1.3rem; border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    z-index: 10000;
+  }
+  .copy-toast.show { opacity: 1; transform: translate(-50%, 0); }
   .form-success {
     display: none;
     font-family: var(--ff-mono);
@@ -673,14 +767,14 @@
   /* CARD HINT */
   .card-click-hint {
     font-family: var(--ff-mono);
-    font-size: .6rem;
+    font-size: .68rem;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: rgba(245,240,232,.3);
-    margin-top: 1.2rem;
+    color: rgba(245,240,232,.6);
+    margin-top: .9rem;
     transition: color .3s;
   }
-  .project-card:hover .card-click-hint { color: rgba(245,240,232,.6); }
+  .project-card:hover .card-click-hint { color: #fff; }
 
   /* MODAL */
   .modal-overlay {
@@ -731,12 +825,12 @@
     border-bottom: 1px solid var(--border);
   }
   .modal-thumb {
-    width: 100px; height: 100px;
+    width: 140px; height: 100px;
     border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.5rem;
+    overflow: hidden;
     flex-shrink: 0;
   }
+  .modal-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .modal-type {
     font-family: var(--ff-mono);
     font-size: .68rem;
@@ -823,9 +917,10 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="#">SB-Milon</a>
+  <a class="nav-logo" href="#">Shahin Biswas Milon</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -836,6 +931,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" class="mob-link">About</a>
+  <a href="#skills" class="mob-link">Skills</a>
   <a href="#projects" class="mob-link">Projects</a>
   <a href="#contact" class="mob-link">Contact</a>
 </div>
@@ -843,20 +939,26 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-tag">Lead Generation & AI Automation Specialist</div>
+    <div class="hero-tag">Hi, I'm</div>
     <h1 class="hero-name">
-      Automating <em>growth</em><br>with smart data
+      Shahin Biswas<br><em>Milon</em>
     </h1>
-    <p class="hero-sub">I help businesses scale through precision lead generation, intelligent web scraping, and agentic AI workflows — built with n8n and cutting-edge automation tools.</p>
+    <p class="hero-role">Lead Generation &amp; AI Automation Specialist</p>
+    <p class="hero-sub">I build B2B lead databases, production web scrapers and AI agents — with Python, Playwright and n8n — that find the right prospects, verify every record and deliver it straight into your CRM.</p>
+    <div class="hero-meta">
+      <span>📍 Dhaka, Bangladesh</span>
+      <span class="hero-meta-dot">·</span>
+      <span><i class="status-dot"></i>Open to freelance &amp; remote work</span>
+    </div>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="#contact" class="btn-ghost">Let's Talk</a>
+      <a href="#contact" class="btn-ghost">Hire Me</a>
     </div>
   </div>
   <div class="hero-right">
     <div class="hero-visual">
       <div class="hero-photo-wrap">
-        <img src="data:image/jpeg;base64,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" alt="SB-Milon" class="hero-photo" />
+        <img src="images/profile.jpg" alt="Shahin Biswas Milon" class="hero-photo" />
         <div class="hero-photo-badge">Lead Gen &amp; AI Agents</div>
         <div class="hero-photo-dot"></div>
       </div>
@@ -898,12 +1000,12 @@
     <h2 class="section-title reveal reveal-delay-1">Turning data<br>into <em>revenue</em></h2>
     <div class="about-stats">
       <div class="stat-box">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">Leads Delivered</div>
+        <div class="stat-num">50K+</div>
+        <div class="stat-label">Records Delivered</div>
       </div>
       <div class="stat-box">
         <div class="stat-num">15+</div>
-        <div class="stat-label">Agents Built</div>
+        <div class="stat-label">AI Agents &amp; Workflows</div>
       </div>
       <div class="stat-box">
         <div class="stat-num">30+</div>
@@ -911,14 +1013,14 @@
       </div>
       <div class="stat-box">
         <div class="stat-num">10+</div>
-        <div class="stat-label">Happy Clients</div>
+        <div class="stat-label">Clients Served</div>
       </div>
     </div>
   </div>
   <div class="about-text reveal">
-    <p>I'm a Lead Generation & AI Automation specialist with deep expertise in extracting high-quality prospect data, building intelligent scraping pipelines, and designing agentic AI workflows that run businesses on autopilot.</p>
-    <p>My core strength lies in combining web scraping precision with n8n-powered automation — creating end-to-end systems that find the right leads, enrich them with actionable data, and deliver them directly into your CRM without manual effort.</p>
-    <p>I'm passionate about the emerging world of agentic AI — building autonomous agents that think, decide, and act to drive real business outcomes. If it's repetitive, I'll automate it. If it needs data, I'll scrape it.</p>
+    <p>I'm <strong>Shahin Biswas Milon</strong>, a Lead Generation &amp; AI Automation Specialist based in Dhaka, Bangladesh. I help sales, recruiting and research teams get accurate data without the manual grind.</p>
+    <p>My work sits where data engineering meets automation: Python and Playwright scrapers that pull clean, structured data from complex websites; enrichment and validation pipelines that make every record outreach-ready; and n8n + LLM agents that answer customers, triage inboxes and run back-office tasks on their own.</p>
+    <p>I care about accuracy as much as speed — every dataset is QC-checked, every figure traceable to its source, and every workflow built to keep running without me. If it's repetitive, I automate it. If it lives on the web, I can extract it.</p>
     <div class="skills-list">
       <span class="skill-tag">Lead Generation</span>
       <span class="skill-tag">Web Scraping</span>
@@ -930,6 +1032,44 @@
       <span class="skill-tag">CRM Automation</span>
       <span class="skill-tag">Prospect Research</span>
     </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-head">
+    <div>
+      <p class="section-label reveal">Tech Stack</p>
+      <h2 class="section-title reveal reveal-delay-1">Tools I <em>build with</em></h2>
+    </div>
+    <p class="reveal reveal-delay-2">The stack behind every project below — chosen for reliability on messy, real-world data and for automations that keep running unattended.</p>
+  </div>
+  <div class="stack-grid">
+      <div class="stack-group reveal reveal-delay-1">
+        <div class="stack-num">01</div>
+        <h3 class="stack-title">Languages &amp; Core</h3>
+        <ul><li>Python</li><li>Webhooks</li><li>PowerShell</li></ul>
+      </div>
+      <div class="stack-group reveal reveal-delay-2">
+        <div class="stack-num">02</div>
+        <h3 class="stack-title">Scraping &amp; Extraction</h3>
+        <ul><li>Playwright</li><li>Selenium</li><li>Requests / BeautifulSoup</li><li>Dynamic &amp; paginated sites</li><li>Cookie / session auth</li></ul>
+      </div>
+      <div class="stack-group reveal reveal-delay-3">
+        <div class="stack-num">03</div>
+        <h3 class="stack-title">AI &amp; Automation</h3>
+        <ul><li>n8n</li><li>OpenAI GPT-4</li><li>Claude AI</li><li>Prompt engineering</li><li>Gmail &amp; Telegram APIs</li></ul>
+      </div>
+      <div class="stack-group reveal reveal-delay-3">
+        <div class="stack-num">04</div>
+        <h3 class="stack-title">Data &amp; Delivery</h3>
+        <ul><li>pandas</li><li>Excel / openpyxl</li><li>Google Sheets API</li><li>Email validation (NeverBounce, Hunter.io)</li><li>QC &amp; de-duplication</li></ul>
+      </div>
+      <div class="stack-group reveal reveal-delay-3">
+        <div class="stack-num">05</div>
+        <h3 class="stack-title">Lead Research</h3>
+        <ul><li>B2B prospect research</li><li>LinkedIn research</li><li>Contact &amp; email discovery</li><li>Data enrichment</li><li>CRM-ready exports</li></ul>
+      </div>
   </div>
 </section>
 
@@ -952,15 +1092,15 @@
           <p id="modalOverview"></p>
         </div>
         <div class="modal-section">
-          <div class="modal-section-label">What Was Done</div>
+          <div class="modal-section-label">What I Built</div>
           <ul class="modal-list" id="modalWork"></ul>
         </div>
         <div class="modal-section">
-          <div class="modal-section-label">Results & Deliverables</div>
+          <div class="modal-section-label">Impact &amp; Deliverables</div>
           <ul class="modal-list modal-list-gold" id="modalResults"></ul>
         </div>
         <div class="modal-section">
-          <div class="modal-section-label">Tools & Stack</div>
+          <div class="modal-section-label">Tech Stack</div>
           <div class="modal-tools" id="modalTools"></div>
         </div>
       </div>
@@ -980,42 +1120,43 @@
     <button class="filter-btn" data-filter="web">Lead Gen</button>
     <button class="filter-btn" data-filter="design">Scraping</button>
     <button class="filter-btn" data-filter="oss">AI Agents</button>
+    <button class="filter-btn" data-filter="app">Web Apps</button>
   </div>
   <div class="project-grid" id="projectGrid">
     <div class="project-card" data-cat="web" data-id="0">
       <div class="project-num"><span>01</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-1">🏪</div>
+      <div class="project-thumb p-bg-1"><img src="images/project-1.jpg" alt="Highpoint Market Exhibitor Database" loading="lazy"></div>
       <div class="project-type">Lead Generation</div>
-      <div class="project-name">Highpoint Trade Show Exhibitors</div>
-      <div class="project-desc">Scraped and enriched 7,000+ exhibitor records from the Highpoint Market — company profiles, LinkedIn, revenue, employee growth, Google reviews, and verified contacts, all QC'd and outreach-ready.</div>
+      <div class="project-name">Highpoint Market Exhibitor Database</div>
+      <div class="project-desc">Built an outreach-ready database of 7,000+ Highpoint Market exhibitors — enriched with LinkedIn, revenue, headcount growth and Google ratings, and QC-verified record by record.</div>
       <div class="project-tags">
         <span class="project-tag">Web Scraping</span>
-        <span class="project-tag">LinkedIn Research</span>
         <span class="project-tag">Data Enrichment</span>
+        <span class="project-tag">LinkedIn Research</span>
         <span class="project-tag">QC Verified</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="web" data-id="1">
       <div class="project-num"><span>02</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-2">💼</div>
+      <div class="project-thumb p-bg-2"><img src="images/project-2.jpg" alt="Investor Outreach Database" loading="lazy"></div>
       <div class="project-type">Lead Generation</div>
-      <div class="project-name">Investor Outreach Lead Database</div>
-      <div class="project-desc">Built a 33,000+ record investor contact database — decision-maker names, titles, corporate & personal emails, and LinkedIn profiles across multiple funding levels, CRM-ready for outreach campaigns.</div>
+      <div class="project-name">Investor Outreach Database</div>
+      <div class="project-desc">Built a 33,000+ record investor contact database from scratch — decision-makers with titles, corporate and personal emails and LinkedIn profiles, segmented by funding level.</div>
       <div class="project-tags">
         <span class="project-tag">Contact Research</span>
-        <span class="project-tag">Email Finding</span>
-        <span class="project-tag">LinkedIn Scraping</span>
+        <span class="project-tag">Email Discovery</span>
+        <span class="project-tag">LinkedIn Research</span>
         <span class="project-tag">CRM-Ready</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="web" data-id="2">
       <div class="project-num"><span>03</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-3">📧</div>
+      <div class="project-thumb p-bg-3"><img src="images/project-3.jpg" alt="Executive Recruiter Email List" loading="lazy"></div>
       <div class="project-type">Lead Generation</div>
       <div class="project-name">Executive Recruiter Email List</div>
-      <div class="project-desc">Compiled and validated 6,800+ executive recruiter contacts — full name, job title, company, LinkedIn URL, and verified email status — built for high-precision B2B outreach with zero bounce risk.</div>
+      <div class="project-desc">Compiled 6,800+ executive recruiter contacts with 100% email validation — every address classified as valid, risky or catch-all for bounce-safe B2B outreach.</div>
       <div class="project-tags">
         <span class="project-tag">Email Validation</span>
         <span class="project-tag">LinkedIn Research</span>
@@ -1026,85 +1167,127 @@
     </div>
     <div class="project-card" data-cat="design" data-id="3">
       <div class="project-num"><span>04</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-4">🛋️</div>
+      <div class="project-thumb p-bg-4"><img src="images/project-4.jpg" alt="Luxury Furniture Multi-Brand Scraper" loading="lazy"></div>
       <div class="project-type">Web Scraping</div>
       <div class="project-name">Luxury Furniture Multi-Brand Scraper</div>
-      <div class="project-desc">Built scrapers for 5 premium furniture brands — Rejuvenation, Curry & Company, Hickory Chair, Bernhardt, Julian Chichester — extracting product names, SKUs, pricing, image URLs, and dimensions into structured Excel datasets.</div>
+      <div class="project-desc">Built scrapers for five luxury furniture brands — Rejuvenation, Curry &amp; Company, Hickory Chair, Bernhardt and Julian Chichester — normalising products, SKUs, prices, dimensions and images into one schema.</div>
       <div class="project-tags">
         <span class="project-tag">Multi-Site Scraping</span>
         <span class="project-tag">Product Data</span>
-        <span class="project-tag">Image URL Extraction</span>
-        <span class="project-tag">Excel Output</span>
+        <span class="project-tag">Image Extraction</span>
+        <span class="project-tag">Data Normalisation</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="design" data-id="4">
       <div class="project-num"><span>05</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-5">🏠</div>
-      <div class="project-type">Web Scraping</div>
-      <div class="project-name">Interior Design Product Catalog Pipeline</div>
-      <div class="project-desc">Scraped full inventory listings for Bria Hammel Interiors and Marc Michaels Interior Design — item specs, vendor info, PO numbers, costs, markup percentages, and room assignments across 3,400+ line items.</div>
+      <div class="project-thumb p-bg-5"><img src="images/project-5.jpg" alt="Interior Design Procurement Data Pipeline" loading="lazy"></div>
+      <div class="project-type">Data Extraction</div>
+      <div class="project-name">Interior Design Procurement Data Pipeline</div>
+      <div class="project-desc">Extracted 3,400+ procurement line items for two interior design firms — vendors, PO numbers, costs, markups, deposits and room assignments — into an accounting-ready dataset.</div>
       <div class="project-tags">
-        <span class="project-tag">Product Listing</span>
-        <span class="project-tag">Pricing & Markup</span>
-        <span class="project-tag">Inventory Scraping</span>
-        <span class="project-tag">Interior Design</span>
+        <span class="project-tag">Data Extraction</span>
+        <span class="project-tag">Pricing &amp; Markup</span>
+        <span class="project-tag">Inventory Data</span>
+        <span class="project-tag">QC Workflow</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="oss" data-id="5">
       <div class="project-num"><span>06</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-6">🤖</div>
+      <div class="project-thumb p-bg-6"><img src="images/project-6.jpg" alt="AI Customer Support Chatbot" loading="lazy"></div>
       <div class="project-type">Agentic AI · n8n</div>
-      <div class="project-name">AI Business Chatbot</div>
-      <div class="project-desc">Built a smart AI-powered chatbot in n8n for businesses — handles customer queries 24/7, understands context, routes complex questions to human agents, and logs every conversation automatically.</div>
+      <div class="project-name">AI Customer Support Chatbot</div>
+      <div class="project-desc">GPT-4 support agent built in n8n — answers customers 24/7 with session memory, escalates complex cases to a human and logs every conversation. Cut manual support time by 70%+.</div>
       <div class="project-tags">
         <span class="project-tag">n8n</span>
-        <span class="project-tag">OpenAI</span>
-        <span class="project-tag">Webhook</span>
-        <span class="project-tag">Auto-Routing</span>
+        <span class="project-tag">OpenAI GPT-4</span>
+        <span class="project-tag">Webhooks</span>
+        <span class="project-tag">Human Hand-off</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="oss" data-id="6">
       <div class="project-num"><span>07</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-1">✈️</div>
+      <div class="project-thumb p-bg-1"><img src="images/project-7.jpg" alt="Telegram AI Assistant" loading="lazy"></div>
       <div class="project-type">Agentic AI · n8n</div>
-      <div class="project-name">Telegram AI Bot</div>
-      <div class="project-desc">Developed a fully autonomous Telegram bot powered by n8n and AI — responds to messages intelligently, executes commands, sends scheduled updates, and connects to external APIs on demand.</div>
+      <div class="project-name">Telegram AI Assistant</div>
+      <div class="project-desc">Autonomous Telegram assistant powered by n8n and OpenAI — natural-language answers, custom commands, scheduled broadcasts and live data from external APIs.</div>
       <div class="project-tags">
         <span class="project-tag">n8n</span>
-        <span class="project-tag">Telegram API</span>
+        <span class="project-tag">Telegram Bot API</span>
         <span class="project-tag">OpenAI</span>
-        <span class="project-tag">Scheduled Triggers</span>
+        <span class="project-tag">Scheduled Jobs</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="oss" data-id="7">
       <div class="project-num"><span>08</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-2">📬</div>
+      <div class="project-thumb p-bg-2"><img src="images/project-8.jpg" alt="AI Email Auto-Reply Agent" loading="lazy"></div>
       <div class="project-type">Agentic AI · n8n</div>
-      <div class="project-name">Email Auto-Reply System</div>
-      <div class="project-desc">Designed an intelligent email automation workflow in n8n that reads incoming emails, detects intent using AI, and fires personalised professional replies — saving businesses hours of manual handling daily.</div>
+      <div class="project-name">AI Email Auto-Reply Agent</div>
+      <div class="project-desc">n8n + GPT-4 inbox agent that classifies every incoming email by intent and sends a personalised reply — cutting response time from hours to under 2 minutes.</div>
       <div class="project-tags">
         <span class="project-tag">n8n</span>
         <span class="project-tag">Gmail API</span>
-        <span class="project-tag">OpenAI</span>
-        <span class="project-tag">Intent Detection</span>
+        <span class="project-tag">OpenAI GPT-4</span>
+        <span class="project-tag">Intent Classification</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
     <div class="project-card" data-cat="oss" data-id="8">
       <div class="project-num"><span>09</span><span class="project-arrow">↗</span></div>
-      <div class="project-thumb p-bg-3">🎓</div>
-      <div class="project-type">Agentic AI · n8n</div>
-      <div class="project-name">Student Information Management Agent</div>
-      <div class="project-desc">Built an n8n agent that manages student data end-to-end — auto-collects form submissions, organises records in Google Sheets, sends confirmation emails, and notifies admins instantly. A fully automated admin pipeline.</div>
+      <div class="project-thumb p-bg-3"><img src="images/project-9.jpg" alt="Student Enrolment Automation" loading="lazy"></div>
+      <div class="project-type">Automation · n8n</div>
+      <div class="project-name">Student Enrolment Automation</div>
+      <div class="project-desc">End-to-end n8n pipeline for student enrolment — captures form submissions, writes clean records to Google Sheets, sends confirmations, alerts admins and blocks duplicates.</div>
       <div class="project-tags">
         <span class="project-tag">n8n</span>
-        <span class="project-tag">Google Sheets</span>
-        <span class="project-tag">Email Automation</span>
-        <span class="project-tag">Form Handling</span>
+        <span class="project-tag">Google Sheets API</span>
+        <span class="project-tag">Gmail API</span>
+        <span class="project-tag">Form Automation</span>
+      </div>
+      <div class="card-click-hint">Click to see full details</div>
+    </div>
+    <div class="project-card" data-cat="app" data-id="9">
+      <div class="project-num"><span>10</span><span class="project-arrow">↗</span></div>
+      <div class="project-thumb p-bg-5"><img src="images/project-10.jpg" alt="Online Candidate Screening Platform" loading="lazy"></div>
+      <div class="project-type">Web App · Python</div>
+      <div class="project-name">Online Candidate Screening Platform</div>
+      <div class="project-desc">Secure LAN-based hiring test platform in Python — timed MCQ exams, server-side scoring, full-screen lock and cheating-event logs, with a live admin dashboard and automatic result emails.</div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Web App</span>
+        <span class="project-tag">Live Monitoring</span>
+        <span class="project-tag">Anti-Cheating</span>
+      </div>
+      <div class="card-click-hint">Click to see full details</div>
+    </div>
+    <div class="project-card" data-cat="oss" data-id="10">
+      <div class="project-num"><span>11</span><span class="project-arrow">↗</span></div>
+      <div class="project-thumb p-bg-6"><img src="images/project-11.jpg" alt="Company Funding Research Agent" loading="lazy"></div>
+      <div class="project-type">Agentic AI · Data Research</div>
+      <div class="project-name">Company Funding Research Agent</div>
+      <div class="project-desc">Research agent that turns a list of company domains into verified funding profiles — venture rounds, totals and federal PPP/SBA/grant awards, every figure tied to a source link.</div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">AI Agent</span>
+        <span class="project-tag">SEC EDGAR · USAspending</span>
+        <span class="project-tag">Source Verification</span>
+      </div>
+      <div class="card-click-hint">Click to see full details</div>
+    </div>
+    <div class="project-card" data-cat="design" data-id="11">
+      <div class="project-num"><span>12</span><span class="project-arrow">↗</span></div>
+      <div class="project-thumb p-bg-4"><img src="images/project-12.jpg" alt="Facebook Page &amp; Group Post Scraper" loading="lazy"></div>
+      <div class="project-type">Web Scraping · Automation</div>
+      <div class="project-name">Facebook Page &amp; Group Post Scraper</div>
+      <div class="project-desc">Playwright scraper that collects Facebook page and group posts for any date range — exact publish dates, author, text and permalink — de-duplicated and exported to Excel.</div>
+      <div class="project-tags">
+        <span class="project-tag">Playwright</span>
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Browser Automation</span>
+        <span class="project-tag">Excel Export</span>
       </div>
       <div class="card-click-hint">Click to see full details</div>
     </div>
@@ -1116,25 +1299,25 @@
   <div class="contact-info">
     <p class="section-label reveal">Get In Touch</p>
     <h2 class="section-title reveal reveal-delay-1">Let's work<br><em>together</em></h2>
-    <p class="reveal reveal-delay-2">Have a project that needs lead generation, smart scraping, or an AI agent? I'd love to hear about it — let's make it happen.</p>
+    <p class="reveal reveal-delay-2">Need a qualified lead list, a reliable scraper or an AI agent that runs on its own? Tell me about your project and I'll reply within 24 hours with how I'd approach it.</p>
     <div class="contact-links reveal reveal-delay-3">
 
       <!-- Gmail -->
-      <a class="cil" href="mailto:sbmilon1910@gmail.com" title="Email">
+      <a class="cil" id="emailLink" href="mailto:sbmilon1910@gmail.com" title="Email">
         <div class="cil-bubble">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#EA4335" d="M6 36V16.5L24 28 42 16.5V36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/>
-            <path fill="#FBBC05" d="M6 16.5V14a2 2 0 0 1 2-2h.5L24 22l15.5-10H40a2 2 0 0 1 2 2v2.5L24 28z"/>
-            <path fill="#34A853" d="M39.5 12H40a2 2 0 0 1 2 2v2.5L24 28 6 16.5V14a2 2 0 0 1 2-2h.5"/>
-            <path fill="#C5221F" d="M6 16.5 24 28l18-11.5V14a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2.5z" opacity=".1"/>
-            <path fill="#4285F4" d="M6 16.5 24 28l18-11.5" opacity="0"/>
+          <svg viewBox="52 42 88 66" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#4285F4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+            <path fill="#34A853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+            <path fill="#FBBC04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+            <path fill="#EA4335" d="M72 74V48l24 18 24-18v26L96 92"/>
+            <path fill="#C5221F" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
           </svg>
         </div>
         <span class="cil-tooltip">sbmilon1910@gmail.com</span>
       </a>
 
       <!-- Phone -->
-      <a class="cil" href="tel:+8801575632463" title="Phone">
+      <a class="cil" id="phoneLink" href="tel:+8801575632463" title="Phone">
         <div class="cil-bubble" style="background:#1A1612;">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#F5F0E8"/>
@@ -1170,35 +1353,36 @@
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" placeholder="Jane" required>
+          <input type="text" id="fname" name="first_name" placeholder="Jane" required>
         </div>
         <div class="form-group">
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" placeholder="Doe">
+          <input type="text" id="lname" name="last_name" placeholder="Doe">
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="jane@example.com" required>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
       </div>
       <div class="form-group">
         <label for="subject">Subject</label>
-        <input type="text" id="subject" placeholder="Project Inquiry">
+        <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
       </div>
       <div class="form-group">
         <label for="msg">Message</label>
-        <textarea id="msg" placeholder="Tell me about your project…" required></textarea>
+        <textarea id="msg" name="message" placeholder="Tell me about your project…" required></textarea>
       </div>
       <button type="submit" class="form-submit">Send Message →</button>
       <div class="form-success" id="formSuccess">✓ Message received — I'll get back to you within 24 hours.</div>
+      <div class="form-error" id="formError"></div>
     </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <a class="footer-logo" href="#">SB-Milon</a>
-  <p>© 2025 SB-Milon. Lead Generation & AI Automation.</p>
+  <a class="footer-logo" href="#">Shahin Biswas Milon</a>
+  <p>© 2026 Shahin Biswas Milon · Lead Generation &amp; AI Automation</p>
   <p>Dhaka, Bangladesh</p>
 </footer>
 
@@ -1206,202 +1390,422 @@
   // ── PROJECT DATA ──────────────────────────────────────────────
   const projects = [
     {
-      thumb: 'p-bg-1', emoji: '🏪',
-      type: 'Lead Generation',
-      title: 'Highpoint Trade Show Exhibitors',
-      tags: ['Web Scraping','LinkedIn Research','Data Enrichment','QC Verified'],
-      overview: 'A comprehensive B2B lead generation project targeting exhibitors at the Highpoint Market — one of the world\'s largest home furnishings trade shows. The goal was to build a fully enriched, QC-verified contact database for a client\'s outreach campaign.',
-      work: [
-        'Scraped 7,000+ exhibitor records including company name, website, address, and social links',
-        'Researched and enriched each company\'s LinkedIn page, annual revenue, and employee count',
-        'Pulled Google Reviews ratings and review counts for credibility scoring',
-        'Tracked employee growth rate over 6 months and 1 year to identify fast-growing targets',
-        'Performed multi-layer QC review with feedback tracking per record',
-        'Delivered outreach-ready data with ATS work status and remarks for each contact'
+      "thumb": "p-bg-1",
+      "img": "images/project-1.jpg",
+      "type": "Lead Generation",
+      "title": "Highpoint Market Exhibitor Database",
+      "tags": [
+        "Web Scraping",
+        "Data Enrichment",
+        "LinkedIn Research",
+        "QC Verified"
       ],
-      results: [
-        '7,000+ verified exhibitor records delivered to client',
-        'Full data enrichment: LinkedIn, revenue, employee growth, Google ratings',
-        'QC-verified dataset with error rate below 2%',
-        'Structured for direct CRM import — zero manual cleanup needed'
+      "overview": "A B2B prospect database for a client's outreach campaign targeting exhibitors at Highpoint Market — one of the world's largest home-furnishings trade shows. The brief: every exhibitor, fully enriched, verified and ready to import into a CRM.",
+      "work": [
+        "Scraped 7,000+ exhibitor records — company name, website, address and social links",
+        "Enriched every company with its LinkedIn page, annual revenue and employee count",
+        "Added Google Reviews rating and review count as a credibility signal",
+        "Tracked 6-month and 1-year headcount growth to surface fast-growing targets",
+        "Ran multi-layer QC with per-record feedback tracking",
+        "Delivered each contact with work status and remarks for the outreach team"
       ],
-      tools: ['Web Scraping','LinkedIn Manual Research','Google Reviews API','Python','Excel / Google Sheets','QC Workflow']
+      "results": [
+        "7,000+ verified exhibitor records delivered",
+        "Full enrichment: LinkedIn, revenue, headcount growth, Google ratings",
+        "QC-verified dataset with an error rate below 2%",
+        "CRM-ready structure — no manual clean-up needed"
+      ],
+      "tools": [
+        "Python",
+        "Web Scraping",
+        "LinkedIn Research",
+        "Google Reviews",
+        "Excel / Google Sheets",
+        "QC Workflow"
+      ]
     },
     {
-      thumb: 'p-bg-2', emoji: '💼',
-      type: 'Lead Generation',
-      title: 'Investor Outreach Lead Database',
-      tags: ['Contact Research','Email Finding','LinkedIn Scraping','CRM-Ready'],
-      overview: 'A large-scale investor lead generation project requiring precise identification and contact data extraction for thousands of investors and their employees across various funding levels — built to power a high-volume outreach campaign.',
-      work: [
-        'Identified and compiled 33,000+ investor and employee records across multiple funding levels',
-        'Extracted company names, websites, domains, and LinkedIn company pages',
-        'Researched individual first name, last name, title, and seniority level for each contact',
-        'Found and verified both corporate emails and personal emails per contact',
-        'Scraped personal LinkedIn profiles and other relevant social/professional links',
-        'Added country data, batch tracking, and submission status for campaign management'
+      "thumb": "p-bg-2",
+      "img": "images/project-2.jpg",
+      "type": "Lead Generation",
+      "title": "Investor Outreach Database",
+      "tags": [
+        "Contact Research",
+        "Email Discovery",
+        "LinkedIn Research",
+        "CRM-Ready"
       ],
-      results: [
-        '33,000+ investor contact records built from scratch',
-        'Dual email coverage — corporate + personal email per contact',
-        'Structured with level/title data for personalized outreach segmentation',
-        'Delivered in batches with QC status tracking throughout'
+      "overview": "A large-scale investor prospecting project: identify investors and their key people across multiple funding levels, and find verified contact details for each — built to power a high-volume, personalised outreach campaign.",
+      "work": [
+        "Compiled 33,000+ investor and team-member records across multiple funding levels",
+        "Captured company name, website, domain and LinkedIn company page",
+        "Researched first name, last name, title and seniority for every contact",
+        "Found and verified both corporate and personal email addresses",
+        "Collected personal LinkedIn profiles and other professional links",
+        "Added country, batch and submission-status fields for campaign tracking"
       ],
-      tools: ['LinkedIn Scraping','Email Finder Tools','Manual Contact Research','Python','Google Sheets','Data Validation']
+      "results": [
+        "33,000+ investor contacts built from scratch",
+        "Dual email coverage — corporate and personal per contact",
+        "Title and seniority data for segmented, personalised outreach",
+        "Delivered in QC-tracked batches"
+      ],
+      "tools": [
+        "LinkedIn Research",
+        "Email Finder Tools",
+        "Python",
+        "Google Sheets",
+        "Data Validation",
+        "Batch QC"
+      ]
     },
     {
-      thumb: 'p-bg-3', emoji: '📧',
-      type: 'Lead Generation',
-      title: 'Executive Recruiter Email List',
-      tags: ['Email Validation','LinkedIn Research','B2B Prospecting','Data Cleaning'],
-      overview: 'A precision B2B lead generation project focused on building a clean, validated contact list of executive recruiters — designed for a client running high-stakes outreach where email deliverability and accuracy were critical.',
-      work: [
-        'Researched and compiled 6,800+ executive recruiter profiles across multiple industries',
-        'Captured first name, last name, job title, company name, and LinkedIn URL per contact',
-        'Found and recorded primary email addresses for each recruiter',
-        'Ran email validation on every address — filtering invalid, risky, and catch-all emails',
-        'Flagged and updated emails that failed validation with corrected alternatives',
-        'Applied QC review with result tracking and booking metadata for campaign scheduling'
+      "thumb": "p-bg-3",
+      "img": "images/project-3.jpg",
+      "type": "Lead Generation",
+      "title": "Executive Recruiter Email List",
+      "tags": [
+        "Email Validation",
+        "LinkedIn Research",
+        "B2B Prospecting",
+        "Data Cleaning"
       ],
-      results: [
-        '6,800+ executive recruiter contacts delivered',
-        '100% email validation coverage — bounce-safe list',
-        'LinkedIn URLs included for multi-channel outreach',
-        'Segmented by email status: valid, risky, catch-all — ready for sequencing'
+      "overview": "A precision B2B list for a client running high-stakes outreach to executive recruiters, where deliverability mattered as much as volume. Every contact had to be accurate, and every email safe to send.",
+      "work": [
+        "Researched 6,800+ executive recruiters across multiple industries",
+        "Captured name, job title, company and LinkedIn URL for every contact",
+        "Found a primary email address for each recruiter",
+        "Validated every address — filtering invalid, risky and catch-all emails",
+        "Replaced failed addresses with corrected alternatives where available",
+        "QC-reviewed the list and added booking metadata for campaign scheduling"
       ],
-      tools: ['LinkedIn Manual Research','NeverBounce / Hunter.io','Email Validation APIs','Google Sheets','Data Cleaning','QC Review']
+      "results": [
+        "6,800+ executive recruiter contacts delivered",
+        "100% validation coverage — a bounce-safe list",
+        "LinkedIn URLs included for multi-channel outreach",
+        "Segmented by email status, ready for sequencing"
+      ],
+      "tools": [
+        "LinkedIn Research",
+        "NeverBounce / Hunter.io",
+        "Email Validation APIs",
+        "Google Sheets",
+        "Data Cleaning",
+        "QC Review"
+      ]
     },
     {
-      thumb: 'p-bg-4', emoji: '🛋️',
-      type: 'Web Scraping',
-      title: 'Luxury Furniture Multi-Brand Scraper',
-      tags: ['Multi-Site Scraping','Product Data','Image URL Extraction','Excel Output'],
-      overview: 'A structured product data scraping project for an interior design client, covering 5 premium furniture brands across their websites. The goal was to build clean, structured product catalogues with all metadata needed for a design platform.',
-      work: [
-        'Scraped Rejuvenation — extracted product name, SKU, price range, full descriptions, 30+ dimension fields (width, depth, height, seat height, arm width, etc.), care instructions, and shipping info',
-        'Scraped Curry & Company — pulled nightstand/furniture listings with product links, image URLs, and category data',
-        'Scraped Hickory Chair — extracted product names, source URLs, high-resolution image links, and category classification',
-        'Scraped Bernhardt — captured nightstand listings including product URLs and image assets from AWS CDN',
-        'Scraped Julian Chichester — extracted 60+ dining table listings with product URLs, CDN image links, and variant data',
-        'Standardized all data into a unified Excel format across all 5 brands'
+      "thumb": "p-bg-4",
+      "img": "images/project-4.jpg",
+      "type": "Web Scraping",
+      "title": "Luxury Furniture Multi-Brand Scraper",
+      "tags": [
+        "Multi-Site Scraping",
+        "Product Data",
+        "Image Extraction",
+        "Data Normalisation"
       ],
-      results: [
-        'Product data from 5 luxury brands scraped and unified',
-        '30+ structured fields per product for Rejuvenation catalogue',
-        'High-resolution image URLs extracted for all brands',
-        'Clean Excel output ready for design platform import'
+      "overview": "Product-catalogue extraction for an interior design client across five premium furniture brands, each with a different site structure. The goal: one clean, consistent catalogue with every field a design platform needs.",
+      "work": [
+        "Rejuvenation — product name, SKU, price range, descriptions, 30+ dimension fields, care and shipping info",
+        "Curry & Company — product listings with links, image URLs and categories",
+        "Hickory Chair — product names, source URLs, high-resolution images and categories",
+        "Bernhardt — product URLs and image assets served from an AWS CDN",
+        "Julian Chichester — 60+ dining-table listings with CDN images and variant data",
+        "Normalised all five brands into a single Excel schema"
       ],
-      tools: ['Python','Playwright / Requests','BeautifulSoup','Excel / openpyxl','CDN Image Extraction','Data Normalization']
+      "results": [
+        "Five luxury brands scraped and unified into one catalogue",
+        "30+ structured fields per product for Rejuvenation",
+        "High-resolution image URLs for every brand",
+        "Clean Excel output ready for platform import"
+      ],
+      "tools": [
+        "Python",
+        "Playwright / Requests",
+        "BeautifulSoup",
+        "Excel / openpyxl",
+        "CDN Image Extraction",
+        "Data Normalisation"
+      ]
     },
     {
-      thumb: 'p-bg-5', emoji: '🏠',
-      type: 'Web Scraping',
-      title: 'Interior Design Product Catalog Pipeline',
-      tags: ['Product Listing','Pricing & Markup','Inventory Scraping','Interior Design'],
-      overview: 'A detailed product inventory scraping and structuring project for two interior design firms — Bria Hammel Interiors and Marc Michaels Interior Design. The client needed clean, line-item-level data from supplier portals for procurement and accounting purposes.',
-      work: [
-        'Extracted 2,800+ product records for Bria Hammel — including descriptions, vendor names, PO numbers, transaction IDs, invoice dates, and WIP cost data',
-        'Scraped 580+ product line items for Marc Michaels covering item specs, client descriptions, components, purchase unit cost, deposit percentages, and final cost',
-        'Captured room assignments, sales codes, ship-to details, and quantity per item',
-        'Extracted selling prices, markup percentages, taxable status, and deposit info',
-        'Handled complex multi-column spreadsheet structures with merged cells and custom headers',
-        'QC reviewed all records with status tracking and client feedback workflow'
+      "thumb": "p-bg-5",
+      "img": "images/project-5.jpg",
+      "type": "Data Extraction",
+      "title": "Interior Design Procurement Data Pipeline",
+      "tags": [
+        "Data Extraction",
+        "Pricing & Markup",
+        "Inventory Data",
+        "QC Workflow"
       ],
-      results: [
-        '3,400+ total product line items extracted across both clients',
-        'Full pricing pipeline — purchase cost → markup → selling price → deposit',
-        'Room-level product assignment preserved for interior design workflows',
-        'Delivered in structured Excel format matching client\'s internal system'
+      "overview": "Line-item procurement data for two interior design firms — Bria Hammel Interiors and Marc Michaels Interior Design. The client needed every product, cost and markup in a clean, structured form for purchasing and accounting.",
+      "work": [
+        "Extracted 2,800+ records for Bria Hammel — descriptions, vendors, PO numbers, transaction IDs, invoice dates and WIP cost",
+        "Extracted 580+ line items for Marc Michaels — specs, components, unit cost, deposit percentage and final cost",
+        "Captured room assignments, sales codes, ship-to details and quantities",
+        "Recorded selling price, markup percentage, taxable status and deposits",
+        "Handled complex sheets with merged cells and custom multi-row headers",
+        "QC-reviewed every record with status tracking and client feedback"
       ],
-      tools: ['Python','Excel / openpyxl','Data Parsing','Google Sheets','QC Workflow','Custom Header Handling']
+      "results": [
+        "3,400+ line items extracted across both firms",
+        "Full pricing chain: purchase cost → markup → selling price → deposit",
+        "Room-level assignments preserved for design workflows",
+        "Excel output matching the client's internal system"
+      ],
+      "tools": [
+        "Python",
+        "Excel / openpyxl",
+        "Data Parsing",
+        "Google Sheets",
+        "QC Workflow",
+        "Custom Header Handling"
+      ]
     },
     {
-      thumb: 'p-bg-6', emoji: '🤖',
-      type: 'Agentic AI · n8n',
-      title: 'AI Business Chatbot',
-      tags: ['n8n','OpenAI','Webhook','Auto-Routing'],
-      overview: 'A fully automated AI chatbot system built in n8n for a business client — designed to handle customer queries around the clock, reduce support workload, and ensure no message goes unanswered, even outside business hours.',
-      work: [
-        'Designed the full n8n workflow from webhook trigger to AI response and logging',
-        'Integrated OpenAI GPT to process customer messages and generate contextual, professional replies',
-        'Built an intent classification layer to route complex queries to human agents automatically',
-        'Set up conversation memory so the bot maintains context across a session',
-        'Connected to a Google Sheet to log every conversation with timestamp, query, and response',
-        'Configured fallback messages for out-of-scope queries with polite handoff prompts'
+      "thumb": "p-bg-6",
+      "img": "images/project-6.jpg",
+      "type": "Agentic AI · n8n",
+      "title": "AI Customer Support Chatbot",
+      "tags": [
+        "n8n",
+        "OpenAI GPT-4",
+        "Webhooks",
+        "Human Hand-off"
       ],
-      results: [
-        '24/7 automated customer support — zero missed messages',
-        'Human escalation routing built-in for complex cases',
-        'Full conversation log with timestamps for audit and improvement',
-        'Client reported 70%+ reduction in manual support time'
+      "overview": "An always-on AI support agent for a business client — built to answer routine questions instantly, hand complex cases to a person, and make sure no customer message goes unanswered, even outside business hours.",
+      "work": [
+        "Designed the full n8n workflow: webhook trigger → AI response → logging",
+        "Integrated GPT-4 to generate contextual, on-brand replies",
+        "Added intent classification to route complex queries to human agents",
+        "Implemented session memory so conversations keep their context",
+        "Logged every conversation to Google Sheets with timestamp, query and reply",
+        "Built polite fallback and hand-off messages for out-of-scope questions"
       ],
-      tools: ['n8n','OpenAI GPT-4','Webhook','Google Sheets','HTTP Request Nodes','Prompt Engineering']
+      "results": [
+        "24/7 automated support — no missed messages",
+        "Built-in human escalation for complex cases",
+        "Full, timestamped conversation log for review",
+        "Client reported a 70%+ reduction in manual support time"
+      ],
+      "tools": [
+        "n8n",
+        "OpenAI GPT-4",
+        "Webhooks",
+        "Google Sheets",
+        "HTTP Request",
+        "Prompt Engineering"
+      ]
     },
     {
-      thumb: 'p-bg-1', emoji: '✈️',
-      type: 'Agentic AI · n8n',
-      title: 'Telegram AI Bot',
-      tags: ['n8n','Telegram API','OpenAI','Scheduled Triggers'],
-      overview: 'A multi-purpose Telegram bot built with n8n and AI — designed to serve as an intelligent assistant for a community or business, capable of answering questions, running commands, and delivering scheduled updates automatically.',
-      work: [
-        'Set up Telegram Bot via BotFather and connected to n8n via webhook trigger',
-        'Integrated OpenAI to power natural language understanding and intelligent replies',
-        'Built command handlers (/start, /help, custom commands) with structured response flows',
-        'Configured scheduled triggers to send daily updates, reminders, or reports to a Telegram group',
-        'Connected bot to external APIs (weather, news, custom business data) for dynamic responses',
-        'Added admin-only command controls and message logging for oversight'
+      "thumb": "p-bg-1",
+      "img": "images/project-7.jpg",
+      "type": "Agentic AI · n8n",
+      "title": "Telegram AI Assistant",
+      "tags": [
+        "n8n",
+        "Telegram Bot API",
+        "OpenAI",
+        "Scheduled Jobs"
       ],
-      results: [
-        'Fully autonomous Telegram bot deployed and live',
-        'Handles open-ended questions with AI + structured commands',
-        'Scheduled daily broadcasts running automatically',
-        'Extendable — new tools and APIs can be added without rebuilding'
+      "overview": "A multi-purpose Telegram assistant for a community or business — it answers questions in plain language, runs commands and delivers scheduled updates automatically.",
+      "work": [
+        "Created the bot via BotFather and connected it to n8n through a webhook",
+        "Integrated OpenAI for natural-language understanding and replies",
+        "Built command handlers (/start, /help and custom commands)",
+        "Scheduled daily updates, reminders and reports to Telegram groups",
+        "Connected external APIs (weather, news, business data) for live answers",
+        "Added admin-only commands and message logging"
       ],
-      tools: ['n8n','Telegram Bot API','OpenAI GPT','Scheduled Triggers','HTTP Request','Webhook','Google Sheets']
+      "results": [
+        "Fully autonomous bot deployed and live",
+        "Handles open questions with AI and structured commands",
+        "Daily broadcasts running on schedule",
+        "Modular design — new tools added without a rebuild"
+      ],
+      "tools": [
+        "n8n",
+        "Telegram Bot API",
+        "OpenAI GPT",
+        "Cron Triggers",
+        "HTTP Request",
+        "Google Sheets"
+      ]
     },
     {
-      thumb: 'p-bg-2', emoji: '📬',
-      type: 'Agentic AI · n8n',
-      title: 'Email Auto-Reply System',
-      tags: ['n8n','Gmail API','OpenAI','Intent Detection'],
-      overview: 'An intelligent email automation system built in n8n that monitors a business inbox, reads incoming emails, classifies their intent with AI, and fires back personalised, professional replies — completely hands-free.',
-      work: [
-        'Connected Gmail inbox to n8n via OAuth trigger to monitor new emails in real time',
-        'Used OpenAI to read the email body and classify intent (inquiry, complaint, request, spam)',
-        'Built separate reply templates and AI prompt flows for each intent category',
-        'Generated personalized, context-aware email replies using GPT-4',
-        'Set up auto-send via Gmail API with sender name, subject threading, and HTML formatting',
-        'Added a Google Sheet log tracking every email: sender, intent, reply sent, timestamp'
+      "thumb": "p-bg-2",
+      "img": "images/project-8.jpg",
+      "type": "Agentic AI · n8n",
+      "title": "AI Email Auto-Reply Agent",
+      "tags": [
+        "n8n",
+        "Gmail API",
+        "OpenAI GPT-4",
+        "Intent Classification"
       ],
-      results: [
-        'Inbox monitored and replied to 24/7 without human input',
-        'Intent-based routing ensures the right reply tone for every email type',
-        'Response time dropped from hours to under 2 minutes',
-        'Client saved 3–4 hours of email handling per day'
+      "overview": "An inbox agent that monitors a business mailbox, understands what each email is about, and replies in the right tone — completely hands-free.",
+      "work": [
+        "Connected Gmail to n8n via OAuth to watch for new mail in real time",
+        "Used GPT-4 to classify intent: inquiry, complaint, request or spam",
+        "Built a dedicated prompt and reply flow for each intent",
+        "Generated personalised, context-aware replies",
+        "Sent replies via the Gmail API with correct threading and HTML formatting",
+        "Logged every email — sender, intent, reply and timestamp — to Google Sheets"
       ],
-      tools: ['n8n','Gmail API (OAuth)','OpenAI GPT-4','Google Sheets','HTML Email Formatting','Intent Classification']
+      "results": [
+        "Inbox answered 24/7 without human input",
+        "Intent-based routing gives every email the right tone",
+        "Response time down from hours to under 2 minutes",
+        "Client saves 3–4 hours of email handling per day"
+      ],
+      "tools": [
+        "n8n",
+        "Gmail API (OAuth)",
+        "OpenAI GPT-4",
+        "Google Sheets",
+        "HTML Email",
+        "Intent Classification"
+      ]
     },
     {
-      thumb: 'p-bg-3', emoji: '🎓',
-      type: 'Agentic AI · n8n',
-      title: 'Student Information Management Agent',
-      tags: ['n8n','Google Sheets','Email Automation','Form Handling'],
-      overview: 'A complete no-code student data management pipeline built in n8n — automating the entire flow from form submission to data storage, confirmation emails, and admin notifications, eliminating manual admin work entirely.',
-      work: [
-        'Connected a Google Form (or Typeform) to n8n via webhook to capture student submissions',
-        'Parsed incoming form data: name, email, phone, course, enrollment date, and other fields',
-        'Auto-inserted each new student record into a structured Google Sheet with timestamp',
-        'Triggered a personalized confirmation email to each student upon successful registration',
-        'Sent an instant admin notification email with the new student\'s details for review',
-        'Built duplicate detection logic to flag and skip repeated submissions automatically'
+      "thumb": "p-bg-3",
+      "img": "images/project-9.jpg",
+      "type": "Automation · n8n",
+      "title": "Student Enrolment Automation",
+      "tags": [
+        "n8n",
+        "Google Sheets API",
+        "Gmail API",
+        "Form Automation"
       ],
-      results: [
-        'Zero manual data entry — all student records handled automatically',
-        'Students receive confirmation within seconds of form submission',
-        'Admin notified instantly for every new enrollment',
-        'Duplicate submission protection built into the workflow'
+      "overview": "A no-code enrolment pipeline that takes every step from form submission to admin notification off the staff's plate.",
+      "work": [
+        "Connected Google Forms / Typeform to n8n through a webhook",
+        "Parsed name, email, phone, course, enrolment date and other fields",
+        "Inserted each student into a structured Google Sheet with a timestamp",
+        "Sent each student a personalised confirmation email",
+        "Notified admins instantly with the new student's details",
+        "Added duplicate detection to flag and skip repeat submissions"
       ],
-      tools: ['n8n','Google Forms / Typeform','Google Sheets API','Gmail API','Webhook','Data Parsing','Conditional Logic']
+      "results": [
+        "Zero manual data entry",
+        "Students confirmed within seconds of submitting",
+        "Admins notified instantly for every enrolment",
+        "Duplicate submissions blocked automatically"
+      ],
+      "tools": [
+        "n8n",
+        "Google Forms / Typeform",
+        "Google Sheets API",
+        "Gmail API",
+        "Webhooks",
+        "Conditional Logic"
+      ]
+    },
+    {
+      "thumb": "p-bg-5",
+      "img": "images/project-10.jpg",
+      "type": "Web App · Python",
+      "title": "Online Candidate Screening Platform",
+      "tags": [
+        "Python",
+        "Web App",
+        "Live Monitoring",
+        "Anti-Cheating"
+      ],
+      "overview": "A candidate screening platform built for a tech company's Market Research department. One admin PC runs a lightweight Python server; candidates on the same Wi-Fi or LAN open a link and sit a timed test, while the admin follows every attempt live from a dashboard.",
+      "work": [
+        "Built a dependency-free Python HTTP server with a strict file whitelist — the answer key never reaches the browser",
+        "Implemented server-side scoring and a server-held timer that cannot be paused",
+        "Full-screen exam page that locks if the candidate leaves or reloads; unlock requires an admin code",
+        "Logged tab switches, copy/cut (with the copied text), locks and unlock attempts per candidate",
+        "Admin dashboard: live candidates, ranked results, question editor, email blocking and result-email settings",
+        "Each session stores the exact paper it was taken with, so editing questions never re-marks past candidates"
+      ],
+      "results": [
+        "Tamper-resistant screening test running on the company's own network",
+        "Instant scoring and ranked results — no manual marking",
+        "Complete integrity log for every candidate",
+        "Results emailed automatically and archived as CSV"
+      ],
+      "tools": [
+        "Python",
+        "SMTP",
+        "PowerShell",
+        "Playwright (E2E tests)"
+      ]
+    },
+    {
+      "thumb": "p-bg-6",
+      "img": "images/project-11.jpg",
+      "type": "Agentic AI · Data Research",
+      "title": "Company Funding Research Agent",
+      "tags": [
+        "Python",
+        "AI Agent",
+        "SEC EDGAR · USAspending",
+        "Source Verification"
+      ],
+      "overview": "Sales teams needed to know how each company on a lead list is funded. The agent researches every domain end to end — confirming who the company really is, gathering evidence from SEC filings, Wikipedia, the web and official federal records — and delivers an Excel workbook where every number carries the sentence and link it came from.",
+      "work": [
+        "Resolved each company's legal name and address from its own website before trusting any data",
+        "Collected evidence from SEC EDGAR, Wikipedia and news, plus PPP/SBA/grant data from the USAspending API",
+        "Extracted funding rounds with rule-based parsing or Claude AI, then re-verified each figure against its source",
+        "Matched federal awards on name and address, so same-named companies elsewhere are never mixed in",
+        "Built an independent data-quality checker that re-reads the delivered workbook and flags any unverifiable number",
+        "Added a learning memory that ranks which sources actually pay off for the client's type of companies"
+      ],
+      "results": [
+        "Funding types, last round, total funding and government awards per company",
+        "Every figure linked to a public source anyone can open",
+        "Companies, Rounds and QC sheets ready for the sales team",
+        "Cached, resumable runs — re-runs cost nothing"
+      ],
+      "tools": [
+        "Python",
+        "Claude AI",
+        "SEC EDGAR",
+        "USAspending API",
+        "Web Scraping",
+        "Excel Reporting"
+      ]
+    },
+    {
+      "thumb": "p-bg-4",
+      "img": "images/project-12.jpg",
+      "type": "Web Scraping · Automation",
+      "title": "Facebook Page & Group Post Scraper",
+      "tags": [
+        "Playwright",
+        "Python",
+        "Browser Automation",
+        "Excel Export"
+      ],
+      "overview": "A tool for collecting public posts from Facebook pages and groups for research and lead discovery. It signs in with an exported session, scrolls the feed like a person would, reads each post's exact publish time and saves everything to a structured Excel file.",
+      "work": [
+        "Automated a real browser with Playwright, authenticating through exported session cookies",
+        "Handled Facebook's virtualised, non-chronological feed by bringing posts into view one at a time",
+        "Read exact publish dates from each post's permalink rather than guessing from text",
+        "Filtered out comments, UI labels and Facebook's decoy characters, keeping only real post content",
+        "De-duplicated posts safely and added checkpoints so long jobs resume where they stopped",
+        "Supported date-range filters, a quick test mode and repeat passes for full coverage"
+      ],
+      "results": [
+        "Clean Excel output: post text, author, date and link",
+        "Date-range scraping for any page or group",
+        "Resumable long runs with no duplicate posts",
+        "Human-paced browsing to keep the account safe"
+      ],
+      "tools": [
+        "Python",
+        "Playwright",
+        "pandas",
+        "Excel",
+        "Cookie Auth",
+        "Checkpointing"
+      ]
     }
   ];
 
@@ -1412,7 +1816,7 @@
   function openModal(id) {
     const p = projects[id];
     document.getElementById('modalThumb').className = 'modal-thumb ' + p.thumb;
-    document.getElementById('modalThumb').textContent = p.emoji;
+    document.getElementById('modalThumb').innerHTML = `<img src="${p.img}" alt="${p.title}">`;
     document.getElementById('modalType').textContent  = p.type;
     document.getElementById('modalTitle').textContent = p.title;
 
@@ -1511,16 +1915,83 @@
   });
 
   // ── CONTACT FORM ──────────────────────────────────────────────
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  // Messages are delivered to the inbox via FormSubmit (formsubmit.co)
+  const MY_EMAIL = 'sbmilon1910@gmail.com';
+  const MY_PHONE = '+880 1575-632463';
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = this.querySelector('.form-submit');
+    const errEl = document.getElementById('formError');
+    const f = this.elements;
+    errEl.style.display = 'none';
+
+    if (!f.first_name.value.trim() || !f.message.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value.trim())) {
+      errEl.textContent = 'Please fill in your first name, a valid email address and a message.';
+      errEl.style.display = 'block';
+      return;
+    }
+
     btn.textContent = 'Sending…';
     btn.style.opacity = '.6';
-    setTimeout(() => {
+    btn.disabled = true;
+
+    const name = (f.first_name.value + ' ' + f.last_name.value).trim();
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/' + MY_EMAIL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: f.email.value.trim(),
+          subject: f.subject.value.trim() || 'Project Inquiry',
+          message: f.message.value.trim(),
+          _subject: 'New portfolio message from ' + name,
+          _replyto: f.email.value.trim(),
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+      const data = await res.json();
+      if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'Send failed');
       btn.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       this.reset();
-    }, 1200);
+    } catch (err) {
+      errEl.textContent = location.protocol === 'file:'
+        ? 'The form only works on the live website, not when the file is opened from your computer.'
+        : 'Sorry, the message could not be sent (' + err.message + '). Please email me directly at ' + MY_EMAIL + '.';
+      errEl.style.display = 'block';
+      btn.textContent = 'Send Message →';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+    }
+  });
+
+  // ── EMAIL / PHONE ICONS ───────────────────────────────────────
+  // Phones open the mail / dialer app; desktops open Gmail compose and copy the number.
+  const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+  function showToast(text) {
+    let t = document.querySelector('.copy-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'copy-toast'; document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  document.getElementById('emailLink').addEventListener('click', e => {
+    if (isMobile) return;
+    e.preventDefault();
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + MY_EMAIL, '_blank');
+  });
+
+  document.getElementById('phoneLink').addEventListener('click', e => {
+    if (isMobile) return;
+    e.preventDefault();
+    if (navigator.clipboard) navigator.clipboard.writeText(MY_PHONE).catch(() => {});
+    showToast('📞 ' + MY_PHONE + ' — number copied');
   });
 
   // ── MODAL CTA closes modal + scrolls to contact ───────────────
