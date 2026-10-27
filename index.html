@@ -49,6 +49,8 @@
     mix-blend-mode: multiply;
   }
   #cursor.expand { width: 48px; height: 48px; background: var(--gold); opacity: .6; }
+  #cursor.on-dark { background: #fff; mix-blend-mode: normal; box-shadow: 0 0 0 1px rgba(0,0,0,.25); }
+  #cursor.on-dark.expand { background: rgba(255,255,255,.35); opacity: 1; box-shadow: 0 0 0 1.5px #fff; }
 
   /* Noise Texture Overlay */
   body::before {
@@ -81,10 +83,11 @@
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     font-family: var(--ff-mono);
-    font-size: .78rem;
+    font-size: .82rem;
+    font-weight: 500;
     letter-spacing: .12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--ink);
     text-decoration: none;
     position: relative;
     transition: color .25s;
@@ -96,8 +99,8 @@
     transform: scaleX(0); transform-origin: left;
     transition: transform .3s;
   }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-links a:hover, .nav-links a.active { color: var(--rust); }
+  .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
 
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; background: none; border: none; padding: 4px; }
   .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: .3s; }
@@ -1862,13 +1865,29 @@
 
   // ── CUSTOM CURSOR ─────────────────────────────────────────────
   const cursor = document.getElementById('cursor');
+  // The dot uses mix-blend-mode: multiply, which turns black on dark areas — switch it to white there
+  const DARK_AREAS = '#projects, .marquee-strip, .stat-box, footer, .btn-primary, .modal-close, .hero-photo-badge';
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top  = e.clientY + 'px';
+    cursor.classList.toggle('on-dark', !!(e.target.closest && e.target.closest(DARK_AREAS)));
   });
   document.querySelectorAll('a, button, .project-card').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('expand'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('expand'));
+  });
+
+  // ── ACTIVE NAV LINK (highlights the section on screen) ────────
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['about', 'skills', 'projects', 'contact'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
   });
 
   // ── NAV SCROLL ────────────────────────────────────────────────
