@@ -201,6 +201,53 @@
     box-shadow: 0 0 0 3px rgba(46,164,79,.18);
   }
 
+  /* NAV CV BUTTON */
+  .nav-links a.nav-cv {
+    color: var(--cream); background: var(--ink);
+    padding: .45rem .9rem; border-radius: 2px;
+  }
+  .nav-links a.nav-cv::after { display: none; }
+  .nav-links a.nav-cv:hover { background: var(--rust); color: #fff; }
+
+  /* EXPERIENCE */
+  #experience { border-top: 1px solid var(--border); }
+  .exp-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 1.5rem 3rem; flex-wrap: wrap; margin-bottom: 3rem;
+  }
+  .exp-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 4rem; align-items: start; }
+  .exp-col-label {
+    font-family: var(--ff-mono); font-size: .7rem; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--rust);
+    padding-bottom: .8rem; margin-bottom: 1.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-side .exp-col-label:not(:first-child) { margin-top: 2.4rem; }
+  .exp-item { border-left: 2px solid var(--rust); padding-left: 1.6rem; }
+  .exp-meta {
+    display: flex; flex-wrap: wrap; gap: .4rem 1.2rem;
+    font-family: var(--ff-mono); font-size: .72rem; letter-spacing: .06em; color: var(--muted);
+  }
+  .exp-when { color: var(--ink); font-weight: 500; }
+  .exp-role { font-family: var(--ff-display); font-size: 1.55rem; font-weight: 700; margin: .7rem 0 .3rem; line-height: 1.25; }
+  .exp-org { font-weight: 500; color: var(--rust); margin-bottom: 1.3rem; }
+  .exp-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+  .exp-list li { color: #5A4E44; line-height: 1.7; padding-left: 1.3rem; position: relative; }
+  .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--rust); }
+  .exp-list strong { color: var(--ink); font-weight: 600; }
+  .edu-item { margin-bottom: 1.3rem; }
+  .edu-item h4 { font-weight: 600; font-size: 1rem; color: var(--ink); line-height: 1.4; }
+  .edu-item p { color: var(--muted); font-size: .92rem; margin: .2rem 0 .4rem; }
+  .edu-tag {
+    display: inline-block; font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .05em;
+    padding: .2rem .6rem; border: 1px solid var(--border); color: var(--ink); border-radius: 2px;
+  }
+  .lang-row { display: flex; gap: 1.5rem; flex-wrap: wrap; font-weight: 500; }
+  .lang-row em { font-style: normal; font-weight: 300; color: var(--muted); margin-left: .3rem; }
+  @media (max-width: 900px) {
+    .exp-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
   /* SKILLS / TECH STACK */
   #skills { border-top: 1px solid var(--border); }
   .skills-head {
@@ -945,9 +992,11 @@
   <a class="nav-logo" href="#">Shahin Biswas Milon</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="Shahin_Biswas_Milon_CV.pdf" class="nav-cv" target="_blank" rel="noopener">CV ↓</a></li>
   </ul>
   <button class="hamburger" id="ham" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -956,9 +1005,11 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" class="mob-link">About</a>
+  <a href="#experience" class="mob-link">Experience</a>
   <a href="#skills" class="mob-link">Skills</a>
   <a href="#projects" class="mob-link">Projects</a>
   <a href="#contact" class="mob-link">Contact</a>
+  <a href="Shahin_Biswas_Milon_CV.pdf" class="mob-link" target="_blank" rel="noopener">Download CV ↓</a>
 </div>
 
 <!-- HERO -->
@@ -978,6 +1029,7 @@
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-ghost">Hire Me</a>
+      <a href="Shahin_Biswas_Milon_CV.pdf" class="btn-ghost" download>Download CV ↓</a>
     </div>
   </div>
   <div class="hero-right">
@@ -1061,6 +1113,71 @@
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-head">
+    <div>
+      <p class="section-label reveal">Experience &amp; Education</p>
+      <h2 class="section-title reveal reveal-delay-1">Where I've <em>worked</em></h2>
+    </div>
+    <a href="Shahin_Biswas_Milon_CV.pdf" class="btn-primary reveal reveal-delay-2" download>Download Full CV ↓</a>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-main reveal">
+      <div class="exp-col-label">Work Experience</div>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-when">2 years · Present</span>
+          <span class="exp-where">Dhaka, Bangladesh</span>
+        </div>
+        <h3 class="exp-role">Senior Executive Researcher, Market Research</h3>
+        <div class="exp-org">Accord Tech Solutions</div>
+        <ul class="exp-list">
+          <li>Lead research and processing with <strong>LinkedIn Sales Navigator</strong> for the <strong>USA and UK</strong> markets — data verification, cleaning and quality control.</li>
+          <li>Company, prospect and service research: email-based leads, influencers, Google Reviews and <strong>funding research</strong>.</li>
+          <li>Support <strong>HubSpot CRM</strong> research and automation, and email marketing campaigns.</li>
+          <li><strong>Web scraping</strong> and AI-assisted automation with <strong>n8n</strong> to collect and structure research data and remove repetitive work.</li>
+          <li>Product and vendor data QA in <strong>Studio Designer</strong> for the Coding Department — SKU source-URL updates, image QC, and source-file comparison to catch mismatched, missing or outdated data.</li>
+          <li>Structured QC and performance reports on researchers' output, in English and Bangla.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-side reveal reveal-delay-1">
+      <div class="exp-col-label">Education</div>
+      <div class="edu-item">
+        <h4>B.Sc. in Computer Science &amp; Engineering</h4>
+        <p>Prime University</p>
+        <span class="edu-tag">Ongoing</span>
+      </div>
+      <div class="edu-item">
+        <h4>Diploma in Engineering, Computer Science &amp; Technology</h4>
+        <p>Institute of Science Trade &amp; Technology (ISTT), BTEB</p>
+        <span class="edu-tag">2023 · CGPA 3.01 / 4.00</span>
+      </div>
+      <div class="edu-item">
+        <h4>Secondary School Certificate (Science)</h4>
+        <p>National Bangla High School, Dhaka Board</p>
+        <span class="edu-tag">2018 · GPA 4.11 / 5.00</span>
+      </div>
+
+      <div class="exp-col-label">Training &amp; Certifications</div>
+      <div class="edu-item">
+        <h4>Cyber Security &amp; Ethical Hacking</h4>
+        <p>People NTech · Internship</p>
+        <span class="edu-tag">3 months</span>
+      </div>
+      <div class="edu-item">
+        <h4>Data Entry</h4>
+        <p>Institute of Science Trade &amp; Technology (ISTT)</p>
+        <span class="edu-tag">3 months</span>
+      </div>
+
+      <div class="exp-col-label">Languages</div>
+      <div class="lang-row"><span>Bangla <em>Native</em></span><span>English <em>Professional</em></span></div>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="skills-head">
@@ -1089,12 +1206,12 @@
       <div id="stack-4" class="stack-group reveal reveal-delay-3">
         <div class="stack-num">04</div>
         <h3 class="stack-title">Data &amp; Delivery</h3>
-        <ul><li>pandas</li><li>Excel / openpyxl</li><li>Google Sheets API</li><li>Email validation (NeverBounce, Hunter.io)</li><li>QC &amp; de-duplication</li></ul>
+        <ul><li>pandas</li><li>Excel / openpyxl</li><li>Studio Designer (product data QA)</li><li>Google Sheets API</li><li>Email validation (NeverBounce, Hunter.io)</li><li>QC &amp; de-duplication</li></ul>
       </div>
       <div id="stack-5" class="stack-group reveal reveal-delay-3">
         <div class="stack-num">05</div>
         <h3 class="stack-title">Lead Research</h3>
-        <ul><li>B2B prospect research</li><li>LinkedIn research</li><li>Contact &amp; email discovery</li><li>Data enrichment</li><li>CRM-ready exports</li></ul>
+        <ul><li>B2B prospect research</li><li>LinkedIn Sales Navigator</li><li>HubSpot CRM</li><li>Contact &amp; email discovery</li><li>Data enrichment</li><li>CRM-ready exports</li></ul>
       </div>
   </div>
 </section>
@@ -1902,7 +2019,7 @@
       navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'skills', 'projects', 'contact'].forEach(id => {
+  ['about', 'experience', 'skills', 'projects', 'contact'].forEach(id => {
     const el = document.getElementById(id);
     if (el) sectionObserver.observe(el);
   });
