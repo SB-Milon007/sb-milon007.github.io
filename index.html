@@ -20,9 +20,10 @@
 <meta name="twitter:image" content="https://sb-milon007.github.io/og-image.jpg">
 <meta name="theme-color" content="#1A1612">
 <link rel="canonical" href="https://sb-milon007.github.io/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png?v=2" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,6 +141,22 @@
     letter-spacing: .02em;
     color: var(--ink);
     text-decoration: none;
+    display: inline-flex; align-items: center; gap: .75rem;
+  }
+  .logo-mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--ink); color: var(--cream);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: .95rem; font-weight: 700; letter-spacing: -.02em;
+    flex-shrink: 0;
+    transition: transform .25s;
+  }
+  .logo-mark i { color: var(--rust); font-style: italic; }
+  .nav-logo:hover .logo-mark { transform: rotate(-6deg) scale(1.05); }
+  @media (max-width: 420px) {
+    .nav-logo { font-size: 1.05rem; gap: .55rem; }
+    .logo-mark { width: 36px; height: 36px; font-size: .82rem; border-radius: 8px; }
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
@@ -868,7 +885,9 @@
     font-size: 1.1rem;
     color: var(--cream);
     text-decoration: none;
+    display: inline-flex; align-items: center; gap: .65rem;
   }
+  .footer-logo .logo-mark { background: var(--cream); color: var(--ink); width: 36px; height: 36px; font-size: .82rem; border-radius: 8px; }
 
   /* ANIMATIONS */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s, transform .7s; }
@@ -1076,7 +1095,7 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="#">Shahin Biswas Milon</a>
+  <a class="nav-logo" href="#"><span class="logo-mark" aria-hidden="true">SB<i>M</i></span><span class="logo-name">Shahin Biswas Milon</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -1602,7 +1621,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <a class="footer-logo" href="#">Shahin Biswas Milon</a>
+  <a class="footer-logo" href="#"><span class="logo-mark" aria-hidden="true">SB<i>M</i></span><span class="logo-name">Shahin Biswas Milon</span></a>
   <p>© 2026 Shahin Biswas Milon · Lead Generation &amp; AI Automation</p>
   <p>Dhaka, Bangladesh</p>
 </footer>
