@@ -8,6 +8,67 @@
 <meta property="og:title" content="Shahin Biswas Milon — Lead Generation & AI Automation">
 <meta property="og:description" content="B2B lead databases, web scrapers and AI agents that turn web data into qualified pipeline.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://sb-milon007.github.io/">
+<meta property="og:site_name" content="Shahin Biswas Milon">
+<meta property="og:image" content="https://sb-milon007.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shahin Biswas Milon — Lead Generation &amp; AI Automation Specialist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shahin Biswas Milon — Lead Generation &amp; AI Automation">
+<meta name="twitter:description" content="B2B lead databases, web scrapers and AI agents that turn web data into qualified pipeline.">
+<meta name="twitter:image" content="https://sb-milon007.github.io/og-image.jpg">
+<meta name="theme-color" content="#1A1612">
+<link rel="canonical" href="https://sb-milon007.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shahin Biswas Milon",
+  "alternateName": "SB Milon",
+  "jobTitle": "Lead Generation & AI Automation Specialist",
+  "url": "https://sb-milon007.github.io/",
+  "image": "https://sb-milon007.github.io/images/profile.jpg",
+  "email": "mailto:sbmilon1910@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "BD"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Accord Tech Solutions"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Prime University"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Institute of Science Trade & Technology (ISTT)"
+    }
+  ],
+  "knowsAbout": [
+    "Lead Generation",
+    "Web Scraping",
+    "Data Enrichment",
+    "n8n",
+    "AI Agents",
+    "Python",
+    "Playwright",
+    "HubSpot CRM",
+    "LinkedIn Sales Navigator"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/lead-generation-shahin-biswas",
+    "https://github.com/SB-Milon007"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -245,6 +306,34 @@
   @media (max-width: 900px) {
     .exp-grid { grid-template-columns: 1fr; gap: 3rem; }
   }
+
+  /* ACCESSIBILITY */
+  /* Text fields always show the normal text cursor */
+  input, textarea, select { cursor: text !important; }
+  /* Touch screens and people who asked for less motion get the normal pointer, not the custom dot */
+  @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+    #cursor { display: none !important; }
+    body, button, .filter-btn, .project-card, .hamburger, .form-submit,
+    .btn-primary, .btn-ghost, .modal-close { cursor: auto !important; }
+    a, button, .filter-btn, .project-card, .hamburger, .form-submit, .modal-close { cursor: pointer !important; }
+    input, textarea { cursor: text !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+    .marquee-track { animation: none !important; }
+    .reveal, .stat-box { opacity: 1 !important; transform: none !important; }
+  }
+  /* keyboard users can see where they are */
+  a:focus-visible, button:focus-visible, .project-card:focus-visible,
+  input:focus-visible, textarea:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+  /* spam trap — hidden from people, filled in by bots */
+  .hp-field { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }
 
   /* SKILLS / TECH STACK */
   #skills { border-top: 1px solid var(--border); }
@@ -1500,6 +1589,10 @@
         <label for="msg">Message</label>
         <textarea id="msg" name="message" placeholder="Tell me about your project…" required></textarea>
       </div>
+      <div class="hp-field" aria-hidden="true">
+        <label for="website">Leave this field empty</label>
+        <input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
+      </div>
       <button type="submit" class="form-submit">Send Message →</button>
       <div class="form-success" id="formSuccess">✓ Message received — I'll get back to you within 24 hours.</div>
       <div class="form-error" id="formError"></div>
@@ -2058,6 +2151,8 @@
     });
   });
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ── ABOUT SKILL TAGS → project filter / Tech Stack group ──────
   document.querySelectorAll('a.skill-tag').forEach(tag => {
     tag.addEventListener('click', e => {
@@ -2067,7 +2162,7 @@
       } else if (tag.dataset.stack) {
         e.preventDefault();
         const group = document.getElementById('stack-' + tag.dataset.stack);
-        group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        group.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         group.classList.remove('flash');
         void group.offsetWidth;
         group.classList.add('flash');
@@ -2086,6 +2181,14 @@
     const errEl = document.getElementById('formError');
     const f = this.elements;
     errEl.style.display = 'none';
+
+    // Bots fill every field, people never see this one — pretend it worked and send nothing
+    if (f._honey.value) {
+      btn.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      this.reset();
+      return;
+    }
 
     if (!f.first_name.value.trim() || !f.message.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value.trim())) {
       errEl.textContent = 'Please fill in your first name, a valid email address and a message.';
@@ -2110,6 +2213,7 @@
           _subject: 'New portfolio message from ' + name,
           _replyto: f.email.value.trim(),
           _template: 'table',
+          _honey: '',
           _captcha: 'false'
         })
       });
